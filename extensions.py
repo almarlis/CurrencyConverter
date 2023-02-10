@@ -26,7 +26,7 @@ class CurrencyConverter:
                 except ValueError:
                     raise ConvertionException(f`Не удалось обработать количество {amount}`)
 
-            r = requests.get(f`https://api.apilayer.com/exchangerates_data/live?base={quote_ticker}&symbols={base_ticker`)
+            r = requests.get(f`https://api.apilayer.com/exchangerates_data/live?base={quote_ticker}&symbols={base_ticker}`, headers = {`nSxQvhASp8dgjnUX4Ua33o19vKercyMg'})
             total_base = json.loads(r.content)[keys[base]]
 
             return total_base
